@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}ユーザーリスト{% endblock %}
+{% block page_title %}ユーザーリスト{% endblock %}
+{% load staticfiles %}
+{% block body %}
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>ユーザ名</th>
+            <th>メールアドレス</th>
+        </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>ユーザ名</th>
+                <th>メールアドレス</th>
+            </tr>
+        </tfoot>
+    <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{user.user_id}}</td>
+          <td>{{user.user_name}}</td>
+          <td>{{user.mail_address}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
